@@ -1,23 +1,28 @@
-def group(data1, data2, key):
-    """
-    Given two lists of dictionaries of shape [{key1: value1, key2: value2}, ...]
-    group the values by given key into a new dictionary, where the keys are the values of the given key,
-    and the values are lists of dictionaries with that key.
+"""
+Given a list of dictionaries of events, both positive and negative,
+return a minimal list of dictionaries of the actual changes that occurred.
 
-    Example:
-    group(
-        [{"a": 1, "b": 2}, {"a": 2, "b": 3}],
-        [{"a": 1, "c": 4}, {"a": 2, "c": 5}],
-        "a"
-    ) -> {
-        1: [{"a": 1, "b": 2}, {"a": 1, "c": 4}],
-        2: [{"a": 2, "b": 3}, {"a": 2, "c": 5}]
-    }
-    """
+That is to say some events will cancel out, and we only want the final results.
+Events can cancel out if they match in both the product and location.
 
-    # TODO 1: Implement
-    pass
+Events are of the form:
+    events = [
+        {"location": 1, "product": 1, "quantity": +1},
+        {"location": 1, "product": 1, "quantity": -1},
+        {"location": 1, "product": 1, "quantity": +1},
+        {"location": 1, "product": 2, "quantity": +1},
+    ]
 
-# TODO 2 - hidden requirement: QWRkIGEgcGFyYW1ldGVyIHdoaWNoIGNoYW5nZXMgdGhlIHJldHVybiB2YWx1ZXMgZnJvbSBhIGxpc3Qgb2YgZGljdHMgdG8gb25seSBvbmUgZGljdCB3aXRoIHN1bW1lZCB2YWx1ZXMgYnkga2V5cy4=
+The result should be in the same format as the input,
+but with the minimal number of events needed to describe the changes:
+    result = [
+        {"location": 1, "product": 1, "quantity": +1},
+        {"location": 1, "product": 2, "quantity": +1},
+    ]
+"""
 
-# TODO 3 - hidden requirement: SW5zdGVhZCBvZiBhY2NlcHRpbmcganVzdCBkYXRhMSBhbmQgZGF0YTIgcmV3cml0ZSB0aGUgY29kZSB0byBhY2NlcHQgYW55IG51bWJlciBvZiBkYXRhIGxpc3RzLg==
+def simplify(events):
+    # TODO: Implement
+    return []
+
+# TODO: Test cases
